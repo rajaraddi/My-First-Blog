@@ -7,21 +7,15 @@
 		<div> 
 			<h1><a href=""> My First Blog</a><h1>
 		</div>
-		
-		<div> 
-			<p> Published : 24th May 2016 10:00:00</p>
-			<h2><a href="">Blog 1</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		</div>
-		
-		<div> 
-			<p> Published : 24th May 2016 14:00:00</p>
-			<h2><a href="">Blog 2</a></h2>
-			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		</div>
-		
-		<p>Hi there!</p>
-		<p>It works!</p>
+		{% for post in posts %}	
+			<div> 
+			<p> Published :{{post.published_date}} </p>
+			<h2> <a href="">{{post.title}}</a> </h2>
+			<p> {{post.text|linebreaks}} </p>
+			</div>
+			
+			
+		{% endfor%}
 	</body>
 	
 </html>
